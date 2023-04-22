@@ -1,0 +1,121 @@
+/* SERVICE - START */
+.service  {
+	min-height: 100vh;
+}
+
+.service-content{
+	padding: 0px 20px;
+}
+
+.service-content .subtext{
+	position: relative;
+	z-index: 1;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+/* SERVICE - CARDS CONTAINER CLASS */
+.service-card-container {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	z-index: 1;
+}
+
+/* SERVICE - CARD */
+.service-card {
+	position: relative;
+	width: 350px;
+	height: 460px;
+	background-color: var(--card-bg);
+	margin: 20px;
+	box-shadow: 0 15px 35px var(--box-shadow);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	--webkit-backdrop-filter: blur(10px);
+	z-index: 1;
+}
+
+/* SERVICE-CARD-CONTENT -> CONTAINS "IMAGE + HEADING + SUBTEXT + LINK(VISIBLE ON HOVER)" */
+.service-card .content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.5s;
+	z-index: 1;
+}
+
+/* SERVICE-CARD -> HOVER CONTENT GOES UP */
+.service-card:hover .content {
+	transform: translateY(-20px);
+}
+
+/* SERVICE-CARD - IMAGE-BOX */
+.service-card .content .imgBx {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+}
+
+/* SERVICE-CARD -> IMAGE */
+.service-card .content .imgBx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* SERVICE-CARD - CONTENT-BOX */
+.service-card .content .contentBx {
+	margin: 20px 10px;
+}
+
+/* SERVICE-CARD-CONTENT-BOX -> HEADING */
+.service-card .content .contentBx h2 {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 30px 0 10px;
+	font-size: 25px;
+}
+
+/* SERVICE-CARD-CONTENT-BOX -> SUBTEXT */
+.service-card .content .contentBx h2 p {
+	padding: 10px;
+	font-size: 18px;
+}
+
+/* SERVICE-CARD -> LINK */
+.service-card  .service-links {
+	position: absolute;
+	font-size: 20px;
+	color: var(--card-link-clr);
+	height: 30px;
+	width: 150px;
+	bottom: 40px;
+	transform: translateY(50px);
+	transition: 0.5s;
+	border: 2px solid var(--card-link-border-clr);
+	border-radius: 20px;
+	text-decoration: none;
+	text-align: center;
+	opacity: 0;
+}
+	
+/* SERVICE-CARD -> HOVER LINK SHOWS UP */
+.service-card:hover .service-links {
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+/* SERVICE - END */

@@ -1,0 +1,118 @@
+/* PORTFOLIO - START */
+.portfolio{
+    min-height: 100vh;
+
+}
+
+.portfolio-content{
+    padding: 0px 20px;
+}
+
+/* SUB-HEADING */
+.portfolio p{
+    text-align: center;
+}
+
+/* PORTFOLIO CARDS CONTAINER CLASS */
+.portfolio-card-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px 50px;
+    padding:100px 0px;
+    width: 100%;
+}
+
+/* PORTFOLIO - CARD */
+.portfolio-card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width:350px;
+    height: 320px;
+    background:var(--card-bg);
+    border-radius: 20px;
+	box-shadow: 0 15px 35px  var(--box-shadow);
+    transition: 0.5s;
+}
+
+/* PORTFOLIO-CARD -> HOVER */
+.portfolio-card:hover{
+    height: 420px;
+}
+
+/* PORTFOLIO-CARD IMAGE-BOX */
+.portfolio-card .imgBx{
+    position: absolute;
+    top: 20px;
+    width: 280px;
+    height: 230px;
+    background-color: #333;
+    border-radius:12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+/* PORTFOLIO-CARD-HOVER: IMAGEBOX POSITION */
+.portfolio-card:hover .imgBx{
+    top: -100px;
+    transform: scale(0.75);
+    box-shadow: 0 15px 45px var(--box-shadow-hover);
+}
+
+/* PORTFOLIO-CARD -> IMAGE */
+.portfolio-card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PORTFOLIO-CARD CONTENT : HEADING + SUBTEXT + LINK(HOVER) */
+.portfolio-card .content{
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    padding: 5px 30px;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+
+/* PORTFOLIO-CARD-HOVER : CONTENT POSITION */
+.portfolio-card:hover .content{
+    top: 130px;
+    height: 250px;
+}
+
+/* PORTFOLIO-CARD-CONTENT -> HEADING */
+.portfolio-card .content h2{
+    font-size: 25px;
+}
+
+/* PORTFOLIO-CARD-CONTENT -> SUBTEXT */
+.portfolio-card .content p{
+    padding: 10px 0px;
+    font-size: 18px;
+}
+
+/* PORTFOLIO-CARD-CONTENT -> LINK */
+.portfolio-card .content .portfolio-links{
+    position: relative;
+    top:10px;
+    font-size: 20px;
+    display: inline-block;
+    color: var(--card-link-clr);
+    height: 30px;
+	width: 150px;
+	border: 2px solid var(--card-link-border-clr);
+	border-radius: 20px;
+	text-decoration: none;
+	text-align: center;
+}
+
+/* PORTFOLIO - END */

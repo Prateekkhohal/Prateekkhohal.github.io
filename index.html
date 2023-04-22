@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prateek Kumar</title>
+    <link rel="stylesheet" href="External.css">
+</head>
+
+<body>
+    <!-- NAVIGATION - BAR -->
+    <div class="nav" id="nav">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <h2>★Wн¡тεdevil </h2>
+            </div>
+            <div class="nav-list" style="display: flex;">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Service</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <i class="bx bx-moon" id="theme-btn"></i>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <!-- Scroll To Top Button -->
+        <div onclick="scrollToTop()" class="scrollTop" alt="Scroll To Top Button">
+            <i class='bx bxs-arrow-to-top bx-border-circle bx-fade-up-hover' style="border:2px solid grey"></i>
+        </div>
+
+    </div>
+
+    <!-- HOME - SECTION -->
+    <div class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm </h1>
+            <h1 class="animate-character"> Prateek Kumar</h1>
+            <div class="Text_Slider">
+                <div class="static-txt">And I'm a</div>
+                <ul class="dynamic-txts">
+                    <li><span>Designer</span></li>
+                    <li><span>Developer</span></li>
+                    <li><span>Freelancer</span></li>
+                    <li><span>Gamer</span></li>
+                </ul>
+            </div>
+            <p>
+                With a strong foundation in app, web, and game development,
+                I am dedicated to staying on top of the latest trends and technologies in the industry to deliver
+                cutting-edge solutions that drive results.
+            </p>
+            <div class="home-btns">
+                <a href="./Assets/PDF/Prateek_Kumar_Resume.pdf" download>Download CV</a>
+                <a href="mailto:Prateekkhohal@outlook.com">Let's Talk</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/prateek-khohal" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/Prateekkhohal" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://twitter.com/PrateekKhohal" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href=" https://www.instagram.com/prateek.khohal_" target="_blank"><i
+                        class='bx bxl-instagram'></i></a>
+                <a href="https://linktr.ee/prateekkhohal" target="_blank"><i class='bx bx-link'></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT - SECTION -->
+    <div class="about" id="about">
+        <h1>About Me</h1>
+        <div class="about-content">
+
+            <div class="about-col1">
+                <img src="./Assets/IMAGES/Profile.png" alt="profile_pic">
+                <h2>PRATEEK KUMAR</h2>
+            </div>
+
+            <div class="about-col2">
+                <div class="Text-about-col-2">
+                    <p>Hi there! My name is Prateek Kumar , and I am a software engineer with a passion for creating
+                        innovative and user-friendly applications and websites.
+                        With 1 year of experience in the industry, I have honed my skills in app and web development,
+                        allowing me to provide effective solutions for various clients.
+                        I am skilled in various programming languages, including Java, Python, C# and C++
+                        <span id="dots">...</span><span id="more" style="display: none;"><br><br>
+                            In addition to my technical skills, I am also highly organized and detail-oriented.
+                            I take a structured approach to software development, ensuring that every aspect of the
+                            project
+                            is carefully planned and executed.
+                            I am also familiar with Agile development methodologies and am comfortable working in a
+                            fast-paced, collaborative environment.<br><br>
+
+                            No matter the size or scope of the project, my focus is always on delivering high-quality
+                            software that meets or exceeds my clients' expectations.<br><br>
+
+                            So whether you're starting a new project or need help improving an existing one, I am here
+                            to
+                            help. Let's work together to create something amazing!</span><button onclick="read()"
+                            id="readBtn">Read
+                            more</button>
+                    </p><br>
+                </div>
+                <div class="tab-titles">
+                    <h2 class="tab-links  active-link" onclick="opentab('skills')">Skills</h2>
+                    <h2 class="tab-links" onclick="opentab('experience')">Experience</h2>
+                    <h2 class="tab-links" onclick="opentab('education')">Education</h2>
+                    <h2 class="tab-links" onclick="opentab('certificates')">Certificates</h2>
+                </div>
+                <div class="tab-contents  active-tab" id="skills">
+                    <ul>
+                        <li><span>App Developmet</span>
+                            <p>-App Development</p>
+                        </li>
+                        <li><span>Game Developmet</span>
+                            <p>-Game Development in Unity Game Engine</p>
+                        </li>
+                        <li><span>C# language</span>
+                            <p>-For Game Scripting in Unity Engine</p>
+                        </li>
+                        <li><span>Python Tools</span>
+                            <p>-AI Tool Development</p>
+                        </li>
+                        <li><span>Web Development</span>
+                            <p>-Web Page & Apps Development</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023</span><br>
+                            <p>-Internship at Defence Reseach and Developmet Organization I.N.M.A.S.</p>
+                        </li>
+                        <li><span>2022</span><br>
+                            <p>-Internship in J.D.Edward's ERP software at Rishikirti Technologies</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2020-2024 </span><br>
+                            <p>-B.Tech in Computer Science & Engineering at C.R.S.S.I.E.TJhajjar</p>
+                        </li>
+                        <li><span>2020</span><br>
+                            <p>-12th from R.C.Memorial School Jhajjar, Haryana-124103</p>
+                        </li>
+                        <li><span>2018</span><br>
+                            <p>-10th from Saarthi Public School Jhajjar, Haryana-124103</p>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="certificates">
+                    <ul>
+                        <li><span>2022</span><br>
+                            <p>-RKT Internship Certificate</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE - SECTION -->
+    <div class="service" id="services">
+        <h1>My Services</h1>
+        <div class="service-content">
+            <div class="subtext">
+                <p>
+                    Looking for a software engineer who can bring your ideas to life? Look no further!
+                    I specialize in app, web, and game development, and I'm passionate about helping businesses
+                    and individuals achieve their goals.
+                </p>
+            </div>
+            <div class="service-card-container">
+                <div class="service-card">
+                    <div class="content">
+                        <div class="imgBx">
+                            <img src="./Assets/IMAGES/Game_Development.png" alt="Game_Development_PNG">
+                        </div>
+                        <div class="contentBx">
+                            <h2>Game Development<br>
+                                <p>"Bringing immersive worlds to life through dynamic game
+                                    development."</p>
+                            </h2>
+                        </div>
+                    </div>
+                    <a class="service-links" href="https://unity.com/" target="_blank">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="content">
+                        <div class="imgBx">
+                            <img src="./Assets/IMAGES/Web_Development.png" alt="Web_Development_PNG">
+                        </div>
+                        <div class="contentBx">
+                            <h2>Web Development<br>
+                                <p>"Building responsive and visually stunning websites to elevate your
+                                    online presence."</p>
+                            </h2>
+                        </div>
+                    </div>
+                    <a class="service-links" href="https://brainstation.io/career-guides/what-is-web-development"
+                        target="_blank">Learn
+                        More</a>
+                </div>
+                <div class="service-card">
+                    <div class="content">
+                        <div class="imgBx">
+                            <img src="./Assets/IMAGES/Apple.png" alt="App_Development_PNG">
+                        </div>
+                        <div class="contentBx">
+                            <h2>App Development<br>
+                                <p>"Crafting user-friendly and engaging experiences through innovative
+                                    Apple & Android app development."</p>
+                            </h2>
+                        </div>
+                    </div>
+                    <a class="service-links" href="https://developer.apple.com/tutorials/app-dev-training"
+                        target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO - SECTION -->
+    <div class="portfolio" id="portfolio">
+        <h1>My Portfolio</h1>
+        <p>Most Recent Work</p>
+        <div class="portfolio-content">
+            <div class="portfolio-card-container">
+                <div class="portfolio-card">
+                    <div class="imgBx">
+                        <img src="./Assets/IMAGES/Portfolio_Website.png" alt="Portfolio_Website_PNG">
+                    </div>
+                    <div class="content">
+                        <!-- style="color:#009688" -->
+                        <h2>Portfolio Website</h2>
+                        <p>Showcasing my unique brand identity and professional achievements through a visually stunning
+                            and user-friendly portfolio website.</p>
+                        <a class="portfolio-links" href="#">Check Out</a>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="imgBx">
+                        <img src="Assets/IMAGES/Car_Racing_Game.png" alt="Car_Racing_Game_PNG">
+                    </div>
+                    <div class="content">
+                        <!-- style="color:#ff3e7f" -->
+                        <h2>Car Racing Game</h2>
+                        <p>Experience the thrill of high-speed racing and adrenaline-pumping action in my immersive and
+                            realistic car racing game.</p>
+                        <a class="portfolio-links" href="#">Check Out</a>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="imgBx">
+                        <img src="./Assets/IMAGES/Productivity_Booster_App.png" alt="Productivity_Booster_App_PNG">
+                    </div>
+                    <div class="content">
+                        <!-- style="color:#03a9f4" -->
+                        <h2>Productivity Booster App</h2>
+                        <p>Maximize your productivity and simplify your daily tasks with my user-friendly and intuitive
+                            productivity booster app.</p>
+                        <a class="portfolio-links" href="#">Check Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT - SECTION -->
+    <div class="contact" id="contact">
+        <h1>Contact Me</h1>
+        <div class="contact-content">
+
+            <div class="contact-column1">
+
+                <p>Feel free to contact.
+                    Get in touch with me today to learn more about my services and how I can help you succeed.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/prateek-khohal" target="_blank">
+                        <i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/Prateekkhohal" target="_blank">
+                        <i class='bx bxl-github'></i></a>
+                    <a href="https://twitter.com/PrateekKhohal" target="_blank">
+                        <i class='bx bxl-twitter'></i></a>
+                    <a href=" https://www.instagram.com/prateek.khohal_" target="_blank">
+                        <i class='bx bxl-instagram'></i></a>
+                    <a href="https://linktr.ee/prateekkhohal" target="_blank">
+                        <i class='bx bx-link'></i></a>
+                </div>
+                <div class="home-btns">
+                    <a href="./Assets/PDF/Prateek_Kumar_Resume.pdf" download >Download CV</a>
+                </div>
+            </div>
+
+            <div class="contact-column2">
+                <form action="https://getform.io/f/149c099d-f036-4fb6-a487-e67f726ce64f" method="POST" class="form"
+                    autocomplete="off">
+                    <input type="text" id="Name" name="name" placeholder="Your name.." required> <input type="email"
+                        id="Email" name="email" placeholder="Your Email.." required>
+                    <textarea id="subject" name="subject" placeholder="Your Message.." style="height:170px"
+                        required></textarea>
+                    <!--hidden Honeypot input to prevent spams -->
+                    <input type="hidden" name="_gotcha" style="display:none !important">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- COPYRIGHT BAR -->
+    <div class="copyright">
+        <p>Copyright © PRATEEK KUMAR</p>
+    </div>
+
+
+    <!-- SCROLL - ANIMATION - SCRIPT -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./Assets/JS/Animation.js"></script>
+
+    <!-- SECTION'S SCRIPT -->
+    <script src="./Assets/JS/Main.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* HOME - START */
+
+.home {
+    min-height: 100vh;
+    padding: 10% 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    text-align: left;
+    line-height: 1.2;
+    padding: 0;
+}
+
+.home-content p {
+    margin: 20px 0px 40px;
+}
+
+/* DOWNLOAD CV & LET'S TALK BUTTON */
+.home-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.home-btns a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: var(--homeBtns-clr);
+    background-color: transparent;
+    border: 2px solid var(--homeBtns-border-color);
+    z-index: 1;
+}
+
+/* SOCIAL - ICONS */
+
+.social-icons {
+    margin: 30px 0px 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--homeBtns-border-color);
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    overflow: hidden;
+    color: var(--homeBtns-clr);
+    background-color: transparent;
+    z-index: 1;
+}
+
+.home-btns a:hover,
+.social-icons a:hover {
+    color: var(--homeBtns-clr-hover);
+    background-color:var(--homeBtns-bg-color);
+}
+
+.home-btns a::before,
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--homeBtns-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-btns a:hover::before,
+.social-icons a:hover::before {
+    width: 100%;
+}
+
+/* ANIMATE CHARACTER ANIMATION */
+
+.animate-character {
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 50px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+/* TEXT SLIDER ANIMATION */
+
+.Text_Slider{
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: transparent;
+}
+.Text_Slider .static-txt{
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 45px;
+    color:var(--text-color);
+}
+.Text_Slider .dynamic-txts{
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    padding-left: 20px;
+}
+.Text_Slider .dynamic-txts li{
+    list-style: none;
+    color: #FC6D6D;
+    font-size: 40px;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+    100%{
+        top: -200px;
+    }
+}
+
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:var(--main-bg-color);
+    border-left: 3px solid #FC6D6D;
+    animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+    40%, 60%{
+        left: calc(100% + 10px);
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@media(max-width:768px) {
+    .home-btns,.social-icons{
+        justify-content: center;
+    }
+}
+/* HOME - END */
