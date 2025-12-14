@@ -3,393 +3,627 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prateek Kumar</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Prateek Kumar | Software Developer Portfolio</title>
+    <meta name="title" content="Prateek Kumar | Software Developer Portfolio">
+    <meta name="description"
+        content="Full-stack developer specializing in app, web, and game development. Browse my portfolio of projects including Unity games, iOS apps, and responsive websites.">
+    <meta name="keywords"
+        content="Prateek Kumar, Software Developer, Web Developer, Game Developer, App Developer, Unity, iOS, Portfolio">
+    <meta name="author" content="Prateek Kumar">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://prateekkhohal.github.io/">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./Assets/IMAGES/icon.ico">
-    <link rel="canonical" href="https://prateekkhohal.github.io/"/>
-    <meta name="description" content="Discover my skills, experience, and achievements in software development with my fully responsive and user-friendly portfolio website.
-                                    Featuring automatic theme changes based on your OS theme, optimized SEO, and fast performance,
-                                    browse through my projects and contact me for inquiries and collaboration opportunities.">
-    <link rel="stylesheet" href="./minify.css" >
+    <link rel="apple-touch-icon" href="./Assets/IMAGES/icon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prateekkhohal.github.io/">
+    <meta property="og:title" content="Prateek Kumar | Software Developer Portfolio">
+    <meta property="og:description" content="Full-stack developer specializing in app, web, and game development.">
+    <meta property="og:image" content="./Assets/IMAGES/Portfolio_Website.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://prateekkhohal.github.io/">
+    <meta property="twitter:title" content="Prateek Kumar | Software Developer Portfolio">
+    <meta property="twitter:description" content="Full-stack developer specializing in app, web, and game development.">
+    <meta property="twitter:image" content="./Assets/IMAGES/Portfolio_Website.webp">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://unpkg.com">
 </head>
 
 <body>
-    <!-- NAVIGATION - BAR -->
-    <div class="nav" id="nav">
-        <nav class="navbar">
-            <div class="nav-logo">
-                <h2>★Wн¡тεdevil </h2>
-            </div>
-            <div class="nav-list" style="display: flex;">
-                <ul class="nav-menu">
-                    <li class="nav-item"><a title="Home Section" href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a title="About Section" href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a title="Service Section" href="#services" class="nav-link">Service</a></li>
-                    <li class="nav-item"><a title="Portfolio Section" href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a title="Contact Section" href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <i class="bx bx-moon" id="theme-btn"></i>
-            </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- NAVIGATION -->
+    <header class="nav" id="nav" role="banner">
+        <nav class="nav__container" aria-label="Main navigation">
+            <a href="#home" class="nav__logo">Prateek Kumar</a>
+
+            <ul class="nav__menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav__link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" class="nav__link" role="menuitem">About</a></li>
+                <li role="none"><a href="#services" class="nav__link" role="menuitem">Services</a></li>
+                <li role="none"><a href="#portfolio" class="nav__link" role="menuitem">Portfolio</a></li>
+                <li role="none"><a href="#contact" class="nav__link" role="menuitem">Contact</a></li>
+                <li role="none">
+                    <button type="button" class="nav__theme-toggle" id="theme-toggle"
+                        aria-label="Toggle dark/light theme" title="Toggle theme">
+                        <i class="bx bx-moon" aria-hidden="true"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <button type="button" class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu"
+                aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav__hamburger-bar"></span>
+                <span class="nav__hamburger-bar"></span>
+                <span class="nav__hamburger-bar"></span>
+            </button>
         </nav>
+    </header>
 
-        <!-- Scroll To Top Button -->
-        <div onclick="scrollToTop()" class="scrollTop" alt="Scroll To Top Button">
-            <i class='bx bxs-arrow-to-top bx-border-circle bx-fade-up-hover' style="border:2px solid grey"></i>
-        </div>
+    <!-- Scroll to Top Button -->
+    <button type="button" class="scroll-top" aria-label="Scroll to top of page" title="Back to top">
+        <i class="bx bxs-arrow-to-top" aria-hidden="true"></i>
+    </button>
 
-    </div>
+    <main id="main-content">
+        <!-- HERO SECTION -->
+        <section class="hero section" id="home" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 id="hero-heading">
+                        <span class="hero__greeting">Hi, I'm</span>
+                        <span class="hero__name">Prateek Kumar</span>
+                    </h1>
 
-    <!-- HOME - SECTION -->
-    <div class="home" id="home">
-        <div class="home-content">
-            <h1>Hi, I'm </h1>
-            <h1 class="animate-character"> Prateek Kumar</h1>
-            <div class="Text_Slider">
-                <div class="static-txt">And I'm a</div>
-                <ul class="dynamic-txts">
-                    <li><span>Designer</span></li>
-                    <li><span>Developer</span></li>
-                    <li><span>Freelancer</span></li>
-                    <li><span>Gamer</span></li>
-                </ul>
-            </div>
-            <p>
-                With a strong foundation in app, web, and game development,
-                I am dedicated to staying on top of the latest trends and technologies in the industry to deliver
-                cutting-edge solutions that drive results.
-            </p>
-            <div class="home-btns">
-                <a title="Download CV" href="./Assets/PDF/Prateek_Kumar_Resume.pdf" download>Download CV</a>
-                <a title="Let's Talk" href="mailto:Prateekkhohal@outlook.com">Let's Talk</a>
-            </div>
+                    <div class="hero__title-wrapper">
+                        <span class="hero__static-text">And I'm a</span>
+                        <div class="hero__dynamic-text" aria-live="polite">
+                            <ul class="hero__dynamic-list">
+                                <li class="hero__dynamic-item"><span>Designer</span></li>
+                                <li class="hero__dynamic-item"><span>Developer</span></li>
+                                <li class="hero__dynamic-item"><span>Freelancer</span></li>
+                                <li class="hero__dynamic-item"><span>Creator</span></li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="social-icons">
-                <a title="Linkedin" href="https://www.linkedin.com/in/prateek-khohal" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                <a title="Github" href="https://github.com/Prateekkhohal" target="_blank"><i class='bx bxl-github'></i></a>
-                <a title="Twitter" href="https://twitter.com/PrateekKhohal" target="_blank"><i class='bx bxl-twitter'></i></a>
-                <a title="Instagram" href=" https://www.instagram.com/prateek.khohal_" target="_blank"><i class='bx bxl-instagram'></i></a>
-                <a title="Linktree" href="https://linktr.ee/prateekkhohal" target="_blank"><i class='bx bx-link'></i></a>
-            </div>
-        </div>
-    </div>
+                    <p class="hero__description">
+                        With a strong foundation in app, web, and game development,
+                        I am dedicated to staying on top of the latest trends and technologies
+                        to deliver cutting-edge solutions that drive results.
+                    </p>
 
-    <!-- ABOUT - SECTION -->
-    <div class="about" id="about">
-        <h1>About Me</h1>
-        <div class="about-content">
+                    <div class="hero__buttons">
+                        <a href="./Assets/PDF/Prateek_Kumar_Resume.pdf" class="btn btn--primary" download
+                            aria-label="Download my resume as PDF">
+                            Download CV
+                        </a>
+                        <a href="mailto:Prateekkhohal@outlook.com" class="btn btn--primary"
+                            aria-label="Send me an email">
+                            Let's Talk
+                        </a>
+                    </div>
 
-            <div class="about-col1">
-                <img src="./Assets/IMAGES/Profile.webp" alt="profile_pic" style="max-width: 250px; max-height: 250px;">
-                <h2>PRATEEK KUMAR</h2>
-            </div>
-
-            <div class="about-col2">
-                <div class="Text-about-col-2">
-                    <p>Hi there! My name is Prateek Kumar , and I am a software engineer with a passion for creating
-                        innovative and user-friendly applications and websites.
-                        With 1 year of experience in the industry, I have honed my skills in app and web development,
-                        allowing me to provide effective solutions for various clients.
-                        I am skilled in various programming languages, including Java, Python, C# and C++
-                        <span id="dots">...</span><span id="more" style="display: none;"><br><br>
-                            In addition to my technical skills, I am also highly organized and detail-oriented.
-                            I take a structured approach to software development, ensuring that every aspect of the
-                            project
-                            is carefully planned and executed.
-                            I am also familiar with Agile development methodologies and am comfortable working in a
-                            fast-paced, collaborative environment.<br><br>
-
-                            No matter the size or scope of the project, my focus is always on delivering high-quality
-                            software that meets or exceeds my clients' expectations.<br><br>
-
-                            So whether you're starting a new project or need help improving an existing one, I am here
-                            to
-                            help. Let's work together to create something amazing!</span><button onclick="read()"
-                            id="readBtn">Read
-                            more</button>
-                    </p><br>
-                </div>
-                <div class="tab-titles">
-                    <h2 class="tab-links  active-link" onclick="opentab('skills')">Skills</h2>
-                    <h2 class="tab-links" onclick="opentab('experience')">Experience</h2>
-                    <h2 class="tab-links" onclick="opentab('education')">Education</h2>
-                    <h2 class="tab-links" onclick="opentab('certificates')">Certificates</h2>
-                </div>
-                <div class="tab-contents  active-tab" id="skills">
-                    <ul>
-                        <li><span>App Developmet</span>
-                            <p>-App Development</p>
-                        </li>
-                        <li><span>Game Developmet</span>
-                            <p>-Game Development in Unity Game Engine</p>
-                        </li>
-                        <li><span>C# language</span>
-                            <p>-For Game Scripting in Unity Engine</p>
-                        </li>
-                        <li><span>Python Tools</span>
-                            <p>-AI Tool Development</p>
-                        </li>
-                        <li><span>Web Development</span>
-                            <p>-Web Page & Apps Development</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2023</span><br>
-                            <p>-Internship at Defence Reseach and Developmet Organization I.N.M.A.S.</p>
-                        </li>
-                        <li><span>2022</span><br>
-                            <p>-Internship in J.D.Edward's ERP software at Rishikirti Technologies</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2020-2024 </span><br>
-                            <p>-B.Tech in Computer Science & Engineering at C.R.S.S.I.E.TJhajjar</p>
-                        </li>
-                        <li><span>2020</span><br>
-                            <p>-12th from R.C.Memorial School Jhajjar, Haryana-124103</p>
-                        </li>
-                        <li><span>2018</span><br>
-                            <p>-10th from Saarthi Public School Jhajjar, Haryana-124103</p>
-
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="certificates">
-                    <ul>
-                        <li><span>2022</span><br>
-                            <p>-RKT Internship Certificate</p>
-                        </li>
-                        <li><span>2023</span><br>
-                            <p>-DRDO Internship Certificate</p>
-                        </li>
-                    </ul>
+                    <div class="hero__social" aria-label="Social media links">
+                        <a href="https://www.linkedin.com/in/prateek-khohal" class="social-link" target="_blank"
+                            rel="noopener noreferrer" aria-label="Visit my LinkedIn profile" title="LinkedIn">
+                            <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/Prateekkhohal" class="social-link" target="_blank"
+                            rel="noopener noreferrer" aria-label="Visit my GitHub profile" title="GitHub">
+                            <i class="bx bxl-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com/PrateekKhohal" class="social-link" target="_blank"
+                            rel="noopener noreferrer" aria-label="Visit my Twitter profile" title="Twitter">
+                            <i class="bx bxl-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/prateek.khohal_" class="social-link" target="_blank"
+                            rel="noopener noreferrer" aria-label="Visit my Instagram profile" title="Instagram">
+                            <i class="bx bxl-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://linktr.ee/prateekkhohal" class="social-link" target="_blank"
+                            rel="noopener noreferrer" aria-label="Visit my Linktree" title="Linktree">
+                            <i class="bx bx-link" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- SERVICE - SECTION -->
-    <div class="service" id="services">
-        <h1>My Services</h1>
-        <div class="service-content">
-            <div class="subtext">
-                <p>
+        <!-- ABOUT SECTION -->
+        <section class="section" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title" id="about-heading">About Me</h2>
+                </header>
+
+                <div class="about__content">
+                    <div class="about__profile">
+                        <img src="./Assets/IMAGES/Profile.webp" alt="Profile photo of Prateek Kumar"
+                            class="about__image" width="200" height="200" loading="lazy">
+                        <h3 class="about__profile-name">Prateek Kumar</h3>
+                    </div>
+
+                    <div class="about__info">
+                        <div class="about__bio">
+                            <p class="about__bio-text">
+                                Hi there! My name is Prateek Kumar, and I am a software engineer with a passion for
+                                creating
+                                innovative and user-friendly applications and websites. With experience in the industry,
+                                I have honed my skills in app and web development, allowing me to provide effective
+                                solutions
+                                for various clients. I am skilled in various programming languages, including Java,
+                                Python, C#, and C++<span id="bio-dots" class="about__dots">...</span>
+                            </p>
+
+                            <div id="bio-extended" class="about__bio-extended">
+                                <p class="about__bio-text">
+                                    In addition to my technical skills, I am also highly organized and detail-oriented.
+                                    I take a structured approach to software development, ensuring that every aspect of
+                                    the project
+                                    is carefully planned and executed. I am also familiar with Agile development
+                                    methodologies
+                                    and am comfortable working in a fast-paced, collaborative environment.
+                                </p>
+                                <p class="about__bio-text">
+                                    No matter the size or scope of the project, my focus is always on delivering
+                                    high-quality
+                                    software that meets or exceeds my clients' expectations.
+                                </p>
+                                <p class="about__bio-text">
+                                    So whether you're starting a new project or need help improving an existing one,
+                                    I am here to help. Let's work together to create something amazing!
+                                </p>
+                            </div>
+
+                            <button type="button" id="read-more-btn" class="about__read-more" aria-expanded="false"
+                                aria-controls="bio-extended">
+                                Read more
+                            </button>
+                        </div>
+
+                        <!-- Tabs -->
+                        <div class="tabs" role="tablist" aria-label="About me sections">
+                            <div class="tabs__nav">
+                                <button type="button" class="tabs__button is-active" data-tab="skills" role="tab"
+                                    aria-selected="true" aria-controls="skills" id="tab-skills">
+                                    Skills
+                                </button>
+                                <button type="button" class="tabs__button" data-tab="experience" role="tab"
+                                    aria-selected="false" aria-controls="experience" id="tab-experience">
+                                    Experience
+                                </button>
+                                <button type="button" class="tabs__button" data-tab="education" role="tab"
+                                    aria-selected="false" aria-controls="education" id="tab-education">
+                                    Education
+                                </button>
+                                <button type="button" class="tabs__button" data-tab="certificates" role="tab"
+                                    aria-selected="false" aria-controls="certificates" id="tab-certificates">
+                                    Certificates
+                                </button>
+                            </div>
+
+                            <!-- Skills Panel -->
+                            <div id="skills" class="tabs__panel is-active" role="tabpanel" aria-labelledby="tab-skills">
+                                <ul class="tabs__list">
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">App Development</h4>
+                                        <p class="tabs__item-description">Mobile application development for iOS and
+                                            Android platforms</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">Game Development</h4>
+                                        <p class="tabs__item-description">Interactive game development using Unity Game
+                                            Engine</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">C# Programming</h4>
+                                        <p class="tabs__item-description">Game scripting and backend development in
+                                            Unity Engine</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">Python Development</h4>
+                                        <p class="tabs__item-description">AI tool development and automation scripts</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">Web Development</h4>
+                                        <p class="tabs__item-description">Responsive web pages and progressive web
+                                            applications</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Experience Panel -->
+                            <div id="experience" class="tabs__panel" role="tabpanel" aria-labelledby="tab-experience"
+                                hidden>
+                                <ul class="tabs__list">
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">2023</h4>
+                                        <p class="tabs__item-description">Internship at Defence Research and Development
+                                            Organisation (INMAS)</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">2022</h4>
+                                        <p class="tabs__item-description">Internship in JD Edwards ERP software at
+                                            Rishikirti Technologies</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Education Panel -->
+                            <div id="education" class="tabs__panel" role="tabpanel" aria-labelledby="tab-education"
+                                hidden>
+                                <ul class="tabs__list">
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">2020 - 2024</h4>
+                                        <p class="tabs__item-description">B.Tech in Computer Science & Engineering at
+                                            CRSSIET Jhajjar</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">2020</h4>
+                                        <p class="tabs__item-description">12th from R.C. Memorial School Jhajjar,
+                                            Haryana</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">2018</h4>
+                                        <p class="tabs__item-description">10th from Saarthi Public School Jhajjar,
+                                            Haryana</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Certificates Panel -->
+                            <div id="certificates" class="tabs__panel" role="tabpanel"
+                                aria-labelledby="tab-certificates" hidden>
+                                <ul class="tabs__list">
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">2023</h4>
+                                        <p class="tabs__item-description">DRDO Internship Certificate</p>
+                                    </li>
+                                    <li class="tabs__item">
+                                        <h4 class="tabs__item-title">2022</h4>
+                                        <p class="tabs__item-description">RKT Internship Certificate</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="section" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title" id="services-heading">My Services</h2>
+                </header>
+
+                <p class="services__intro">
                     Looking for a software engineer who can bring your ideas to life? Look no further!
-                    I specialize in app, web, and game development, and I'm passionate about helping businesses
-                    and individuals achieve their goals.
+                    I specialize in app, web, and game development, and I'm passionate about helping
+                    businesses and individuals achieve their goals.
                 </p>
-            </div>
-            <div class="service-card-container">
-                <div class="service-card">
-                    <div class="content">
-                        <div class="imgBx">
-                            <img src="./Assets/IMAGES/Game_Development.webp" alt="Game_Development_WEBP">
-                        </div>
-                        <div class="contentBx">
-                            <h2>Game Development<br>
-                                <p>"Bringing immersive worlds to life through dynamic game
-                                    development."</p>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="content">
-                        <div class="imgBx">
-                            <img src="./Assets/IMAGES/Web_Development.webp" alt="Web_Development_WEBP">
-                        </div>
-                        <div class="contentBx">
-                            <h2>Web Development<br>
-                                <p>"Building responsive and visually stunning websites to elevate your
-                                    online presence."</p>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="content">
-                        <div class="imgBx">
-                            <img src="./Assets/IMAGES/Apple.webp" alt="App_Development_WEBP">
-                        </div>
-                        <div class="contentBx">
-                            <h2>App Development<br>
-                                <p>"Crafting user-friendly and engaging experiences through innovative
-                                    Apple & Android app development."</p>
-                            </h2>
-                        </div>
-                    </div>
+
+                <div class="services__grid">
+                    <article class="service-card">
+                        <img src="./Assets/IMAGES/Game_Development.webp"
+                            alt="Game development illustration showing controller and code" class="service-card__image"
+                            loading="lazy" width="120" height="120">
+                        <h3 class="service-card__title">Game Development</h3>
+                        <p class="service-card__description">
+                            Bringing immersive worlds to life through dynamic game development.
+                            From concept to deployment, I create engaging gaming experiences.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <img src="./Assets/IMAGES/Web_Development.webp"
+                            alt="Web development illustration showing browser and code" class="service-card__image"
+                            loading="lazy" width="120" height="120">
+                        <h3 class="service-card__title">Web Development</h3>
+                        <p class="service-card__description">
+                            Building responsive and visually stunning websites to elevate your online presence.
+                            Modern, fast, and accessible web solutions.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <img src="./Assets/IMAGES/Apple.webp" alt="App development illustration showing mobile devices"
+                            class="service-card__image" loading="lazy" width="120" height="120">
+                        <h3 class="service-card__title">App Development</h3>
+                        <p class="service-card__description">
+                            Crafting user-friendly and engaging experiences through innovative
+                            iOS and Android app development.
+                        </p>
+                    </article>
                 </div>
             </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section class="section" id="portfolio" aria-labelledby="portfolio-heading">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title" id="portfolio-heading">My Portfolio</h2>
+                    <p class="section__subtitle">Most Recent Work</p>
+                </header>
+
+                <div class="portfolio__grid">
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/Merry_Snowball_Game.webp"
+                                alt="Screenshot of Merry Snowball VR Game showing winter landscape"
+                                class="portfolio-card__image" loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Merry Snowball VR Game</h3>
+                            <p class="portfolio-card__description">
+                                Step into a whimsical world of winter wonder, where every snowball thrown
+                                feels like a flurry of excitement!
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/Merry_Snowball_VR_Game"
+                                class="portfolio-card__link" target="_blank" rel="noopener noreferrer"
+                                aria-label="View Merry Snowball VR Game project on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/Mario_2D.webp"
+                                alt="Screenshot of Mario 2D game showing classic platformer gameplay"
+                                class="portfolio-card__image" loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Mario 2D</h3>
+                            <p class="portfolio-card__description">
+                                My fresh take on the iconic Mario 2D game! Immerse yourself in nostalgia
+                                with revamped gameplay and retro vibes.
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/Mario_2D" class="portfolio-card__link"
+                                target="_blank" rel="noopener noreferrer" aria-label="View Mario 2D project on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/Color_Switch.webp"
+                                alt="Screenshot of Color Switch game showing colorful obstacles"
+                                class="portfolio-card__image" loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Color Switch</h3>
+                            <p class="portfolio-card__description">
+                                Navigate a bouncing ball through a vibrant maze of colored obstacles
+                                in this addictively minimalist arcade game!
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/Color_Switch" class="portfolio-card__link"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="View Color Switch project on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/Appetizers.webp"
+                                alt="Screenshot of Appetizers food delivery app interface" class="portfolio-card__image"
+                                loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Appetizers</h3>
+                            <p class="portfolio-card__description">
+                                A feature-rich food delivery application replica with intuitive
+                                ordering and smooth user experience.
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/appetizers" class="portfolio-card__link"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="View Appetizers project on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/Apple_Frameworks.webp"
+                                alt="Screenshot of Apple Frameworks app showing grid of framework icons"
+                                class="portfolio-card__image" loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Apple Frameworks</h3>
+                            <p class="portfolio-card__description">
+                                An educational app showcasing various Apple frameworks in an elegant
+                                grid view with detailed descriptions.
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/apple--frameworks" class="portfolio-card__link"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="View Apple Frameworks project on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/ios-weather.webp"
+                                alt="Screenshot of Weather app showing temperature and conditions"
+                                class="portfolio-card__image" loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Weather App</h3>
+                            <p class="portfolio-card__description">
+                                SwiftUI Weather App for iOS, replicating Apple's elegant design
+                                with real-time weather data.
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/weather--app" class="portfolio-card__link"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="View Weather App project on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/Portfolio_Website.webp" alt="Screenshot of this portfolio website"
+                                class="portfolio-card__image" loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Portfolio Website</h3>
+                            <p class="portfolio-card__description">
+                                This responsive portfolio website showcasing my professional
+                                achievements and projects.
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/Prateekkhohal.github.io"
+                                class="portfolio-card__link" target="_blank" rel="noopener noreferrer"
+                                aria-label="View Portfolio Website source code on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <div class="portfolio-card__image-wrapper">
+                            <img src="./Assets/IMAGES/Car_Racing_Game.webp"
+                                alt="Screenshot of Car Racing Game showing racing track" class="portfolio-card__image"
+                                loading="lazy">
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Car Racing Game</h3>
+                            <p class="portfolio-card__description">
+                                Experience the thrill of high-speed racing in this immersive
+                                and action-packed car racing game.
+                            </p>
+                            <a href="https://github.com/Prateekkhohal/Car_Racing_Game" class="portfolio-card__link"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="View Car Racing Game project on GitHub">
+                                View Project
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title" id="contact-heading">Contact Me</h2>
+                </header>
+
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <p class="contact__text">
+                            Feel free to reach out! Get in touch with me today to learn more about my services
+                            and how I can help you succeed with your next project.
+                        </p>
+
+                        <div class="contact__social" aria-label="Social media links">
+                            <a href="https://www.linkedin.com/in/prateek-khohal" class="social-link" target="_blank"
+                                rel="noopener noreferrer" aria-label="Connect on LinkedIn" title="LinkedIn">
+                                <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://github.com/Prateekkhohal" class="social-link" target="_blank"
+                                rel="noopener noreferrer" aria-label="Follow on GitHub" title="GitHub">
+                                <i class="bx bxl-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com/PrateekKhohal" class="social-link" target="_blank"
+                                rel="noopener noreferrer" aria-label="Follow on Twitter" title="Twitter">
+                                <i class="bx bxl-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.instagram.com/prateek.khohal_" class="social-link" target="_blank"
+                                rel="noopener noreferrer" aria-label="Follow on Instagram" title="Instagram">
+                                <i class="bx bxl-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://linktr.ee/prateekkhohal" class="social-link" target="_blank"
+                                rel="noopener noreferrer" aria-label="Visit Linktree" title="Linktree">
+                                <i class="bx bx-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__buttons">
+                            <a href="./Assets/PDF/Prateek_Kumar_Resume.pdf" class="btn btn--primary" download
+                                aria-label="Download resume as PDF">
+                                Download CV
+                            </a>
+                        </div>
+                    </div>
+
+                    <form action="https://getform.io/f/149c099d-f036-4fb6-a487-e67f726ce64f" method="POST"
+                        class="contact-form" autocomplete="off" novalidate>
+                        <div class="contact-form__group">
+                            <label for="contact-name" class="sr-only">Your Name</label>
+                            <input type="text" id="contact-name" name="name" class="contact-form__input"
+                                placeholder="Your name" required minlength="2" maxlength="100">
+                        </div>
+
+                        <div class="contact-form__group">
+                            <label for="contact-email" class="sr-only">Your Email</label>
+                            <input type="email" id="contact-email" name="email" class="contact-form__input"
+                                placeholder="Your email" required>
+                        </div>
+
+                        <div class="contact-form__group">
+                            <label for="contact-message" class="sr-only">Your Message</label>
+                            <textarea id="contact-message" name="message" class="contact-form__textarea"
+                                placeholder="Your message" required minlength="10" maxlength="2000"></textarea>
+                        </div>
+
+                        <!-- Honeypot field to prevent spam -->
+                        <div class="contact-form__honeypot" aria-hidden="true">
+                            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="contact-form__submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer__text">
+                &copy; <span id="current-year"></span> Prateek Kumar. All rights reserved.
+            </p>
         </div>
-    </div>
+    </footer>
 
-    <!-- PORTFOLIO - SECTION -->
-    <div class="portfolio" id="portfolio">
-        <h1>My Portfolio</h1>
-        <p>Most Recent Work</p>
-        <div class="portfolio-content">
-            <div class="portfolio-card-container">
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="./Assets/IMAGES/Merry_Snowball_Game.webp" alt="Snowball_Game_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#009688" -->
-                        <h2>Merry Snowball VR Game</h2>
-                        <p>Step into a whimsical world of winter wonder, where every snowball thrown feels like a flurry of excitement, and each virtual snowscape is a canvas of frosty fun! 🌨️❄️</p>
-                        <a title="SnowBall Game" class="portfolio-links" href="https://github.com/Prateekkhohal/Merry_Snowball_VR_Game">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="./Assets/IMAGES/Mario_2D.webp" alt="Mario_2D_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#009688" -->
-                        <h2>MARIO 2D</h2>
-                        <p>My fresh take on the iconic Mario 2D game! Immerse yourself in nostalgia with revamped gameplay, hidden gems, and retro vibes. Get your hands on it now! </p>
-                        <a title="Mario 2D" class="portfolio-links" href="https://github.com/Prateekkhohal/Mario_2D">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="./Assets/IMAGES/Color_Switch.webp" alt="Color_Switch_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#009688" -->
-                        <h2>Color Switch</h2>
-                        <p>Navigate a bouncing ball through a vibrant maze of colored obstacles in this addictively minimalist arcade game!</p>
-                        <a title="Color Switch" class="portfolio-links" href="https://github.com/Prateekkhohal/Color_Switch">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="Assets/IMAGES/Appetizers.webp" alt="appetizers_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#ff3e7f" -->
-                        <h2>Appetizers</h2>
-                        <p> This app is a replica of online food delivery application </p>
-                        <a title="Appetizers App" class="portfolio-links" href="https://github.com/Prateekkhohal/appetizers">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="Assets/IMAGES/Apple_Frameworks.webp" alt="apple_frameworks_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#ff3e7f" -->
-                        <h2>Apple Frameworks</h2>
-                        <p> The app showcases various Apple frameworks in a grid view </p>
-                        <a title="Apple Frameworks App" class="portfolio-links" href="https://github.com/Prateekkhohal/apple--frameworks">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="Assets/IMAGES/ios-weather.webp" alt="weather-app_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#ff3e7f" -->
-                        <h2>Weather App</h2>
-                        <p> SwiftUI Weather App for iOS, replicating Apple's design. Exploring my coding journey!</p>
-                        <a title="Weather App" class="portfolio-links" href="https://github.com/Prateekkhohal/weather--app">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="./Assets/IMAGES/Portfolio_Website.webp" alt="Portfolio_Website_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#03a9f4" -->
-                        <h2>Portfolio Website</h2>
-                        <p>Showcasing my unique brand identity and professional achievements through a visually stunning and user-friendly portfolio website.</p>
-                        <a title="Portfolio Website" class="portfolio-links" href="https://github.com/Prateekkhohal/Prateekkhohal.github.io">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="./Assets/IMAGES/Car_Racing_Game.webp" alt="Car_Racing_Game_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#03a9f4" -->
-                        <h2>Car Racing Game</h2>
-                        <p>Experience the thrill of high-speed racing and adrenaline-pumping action in my immersive and realistic car racing game.</p>
-                        <a title="Productivity Booster App" class="portfolio-links" href="https://github.com/Prateekkhohal/Car_Racing_Game">Check Out</a>
-                    </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="imgBx">
-                        <img src="./Assets/IMAGES/Productivity_Booster_App.webp" alt="Productivity_Booster_App_WEBP">
-                    </div>
-                    <div class="content">
-                        <!-- style="color:#03a9f4" -->
-                        <h2>Productivity Booster App</h2>
-                        <p>Maximize your productivity and simplify your daily tasks with my user-friendly and intuitive
-                            productivity booster app.</p>
-                        <a title="Productivity Booster App" class="portfolio-links" href="#">Check Out</a>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script>
+    <script src="./main.js" defer></script>
 
-    <!-- CONTACT - SECTION -->
-    <div class="contact" id="contact">
-        <h1>Contact Me</h1>
-        <div class="contact-content">
-
-            <div class="contact-column1">
-
-                <p>Feel free to contact.
-                    Get in touch with me today to learn more about my services and how I can help you succeed.</p>
-                <div class="social-icons">
-                    <a title="Linkedin" href="https://www.linkedin.com/in/prateek-khohal" target="_blank">
-                        <i class='bx bxl-linkedin'></i></a>
-                    <a title="Github" href="https://github.com/Prateekkhohal" target="_blank">
-                        <i class='bx bxl-github'></i></a>
-                    <a title="Twitter" href="https://twitter.com/PrateekKhohal" target="_blank">
-                        <i class='bx bxl-twitter'></i></a>
-                    <a title="Instagram" href=" https://www.instagram.com/prateek.khohal_" target="_blank">
-                        <i class='bx bxl-instagram'></i></a>
-                    <a title="Linktree" href="https://linktr.ee/prateekkhohal" target="_blank">
-                        <i class='bx bx-link'></i></a>
-                </div>
-                <div class="home-btns">
-                    <a title="Download CV" href="./Assets/PDF/Prateek_Kumar_Resume.pdf" download >Download CV</a>
-                </div>
-            </div>
-
-            <div class="contact-column2">
-                <form action="https://getform.io/f/149c099d-f036-4fb6-a487-e67f726ce64f" method="POST" class="form"
-                    autocomplete="off">
-                    <input type="text" id="Name" name="name" placeholder="Your name.." required> <input type="email"
-                        id="Email" name="email" placeholder="Your Email.." required>
-                    <textarea id="subject" name="subject" placeholder="Your Message.." style="height:170px"
-                        required></textarea>
-                    <!--hidden Honeypot input to prevent spams -->
-                    <input type="hidden" name="_gotcha" style="display:none !important">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- COPYRIGHT BAR -->
-    <div class="copyright">
-        <p>Copyright © PRATEEK KUMAR</p>
-    </div>
-
-    <script src="./minify.js"></script>
+    <!-- Dynamic Year Script -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
