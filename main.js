@@ -14,7 +14,7 @@
   'use strict';
 
   // ============================================
-  // THREE.JS 3D SCENE
+  // THREE.JS 3D SCENE - Simplified
   // ============================================
 
   const Scene3D = {
@@ -72,85 +72,126 @@
     },
 
     createLights() {
-      // Ambient light
-      const ambient = new THREE.AmbientLight(0x404040, 0.5);
+      // Ambient light - warm
+      const ambient = new THREE.AmbientLight(0x2a2a2a, 0.6);
       this.scene.add(ambient);
 
-      // Cyan point light
-      const cyanLight = new THREE.PointLight(0x00f0ff, 2, 20);
-      cyanLight.position.set(5, 5, 5);
-      this.scene.add(cyanLight);
+      // Warm gold main light
+      const goldLight = new THREE.PointLight(0xc9a962, 2.5, 25);
+      goldLight.position.set(5, 5, 5);
+      this.scene.add(goldLight);
 
-      // Magenta point light
-      const magentaLight = new THREE.PointLight(0xff00ff, 2, 20);
-      magentaLight.position.set(-5, -5, 5);
-      this.scene.add(magentaLight);
+      // Champagne accent light
+      const champagneLight = new THREE.PointLight(0xf5f0e6, 1.5, 20);
+      champagneLight.position.set(-5, -3, 5);
+      this.scene.add(champagneLight);
 
-      // Green point light
-      const greenLight = new THREE.PointLight(0x00ff88, 1, 15);
-      greenLight.position.set(0, 5, -5);
-      this.scene.add(greenLight);
+      // Subtle warm rim light
+      const rimLight = new THREE.PointLight(0xd4af37, 1, 15);
+      rimLight.position.set(0, 5, -5);
+      this.scene.add(rimLight);
     },
 
     createGeometry() {
-      // Main geometric shape - Icosahedron
-      const geometry = new THREE.IcosahedronGeometry(2, 1);
-      const material = new THREE.MeshPhongMaterial({
-        color: 0x0a0a0f,
-        emissive: 0x00f0ff,
-        emissiveIntensity: 0.1,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.8
-      });
-      this.model = new THREE.Mesh(geometry, material);
+      // Container for all voxels
+      this.model = new THREE.Group();
+      this.voxels = [];
+
+      // Gold color palette
+      const colors = [
+        0xc9a962, // Primary gold
+        0xd4af37, // Rich gold
+        0xb8956c, // Warm copper
+        0xf5f0e6, // Cream
+        0x8b7355  // Bronze
+      ];
+
+      // Create voxel grid in a spherical pattern
+      const gridSize = 3;
+      const spacing = 0.8;
+
+      for (let x = -gridSize; x <= gridSize; x++) {
+        for (let y = -gridSize; y <= gridSize; y++) {
+          for (let z = -gridSize; z <= gridSize; z++) {
+            // Spherical mask - only create voxels within radius
+            const distance = Math.sqrt(x * x + y * y + z * z);
+            if (distance > gridSize * 0.9) continue;
+
+            // Random chance to skip some voxels for organic look
+            if (Math.random() > 0.6) continue;
+
+            const size = 0.3 + Math.random() * 0.2;
+            const geometry = new THREE.BoxGeometry(size, size, size);
+
+            const colorIndex = Math.floor(Math.random() * colors.length);
+            const material = new THREE.MeshPhongMaterial({
+              color: colors[colorIndex],
+              emissive: colors[colorIndex],
+              emissiveIntensity: 0.1,
+              transparent: true,
+              opacity: 0.7 + Math.random() * 0.3,
+              shininess: 100
+            });
+
+            const voxel = new THREE.Mesh(geometry, material);
+            voxel.position.set(
+              x * spacing + (Math.random() - 0.5) * 0.2,
+              y * spacing + (Math.random() - 0.5) * 0.2,
+              z * spacing + (Math.random() - 0.5) * 0.2
+            );
+
+            // Store animation data
+            voxel.userData = {
+              originalPos: voxel.position.clone(),
+              floatSpeed: 0.5 + Math.random() * 1.5,
+              floatOffset: Math.random() * Math.PI * 2,
+              rotationSpeed: (Math.random() - 0.5) * 0.02
+            };
+
+            this.voxels.push(voxel);
+            this.model.add(voxel);
+          }
+        }
+      }
+
       this.scene.add(this.model);
 
-      // Inner solid core
-      const coreGeometry = new THREE.IcosahedronGeometry(1.5, 0);
-      const coreMaterial = new THREE.MeshPhongMaterial({
-        color: 0x1a1a2e,
-        emissive: 0xff00ff,
-        emissiveIntensity: 0.05,
-        transparent: true,
-        opacity: 0.6
-      });
-      const core = new THREE.Mesh(coreGeometry, coreMaterial);
-      this.model.add(core);
-
-      // Orbiting rings
-      for (let i = 0; i < 3; i++) {
-        const ringGeometry = new THREE.TorusGeometry(2.5 + i * 0.5, 0.02, 16, 100);
+      // Add elegant outer rings with gold
+      this.rings = [];
+      for (let i = 0; i < 2; i++) {
+        const ringGeometry = new THREE.TorusGeometry(3.5 + i * 0.6, 0.01, 16, 100);
         const ringMaterial = new THREE.MeshBasicMaterial({
-          color: i === 0 ? 0x00f0ff : i === 1 ? 0xff00ff : 0x00ff88,
+          color: i === 0 ? 0xc9a962 : 0xf5f0e6,
           transparent: true,
-          opacity: 0.6
+          opacity: 0.4
         });
         const ring = new THREE.Mesh(ringGeometry, ringMaterial);
-        ring.rotation.x = Math.PI / 2 + (i * 0.3);
-        ring.rotation.y = i * 0.5;
+        ring.rotation.x = Math.PI / 2 + (i * 0.4);
+        ring.rotation.y = i * 0.3;
         this.rings.push(ring);
         this.scene.add(ring);
       }
     },
 
     createParticles() {
-      const particleCount = 500;
+      const particleCount = 400;
       const geometry = new THREE.BufferGeometry();
       const positions = new Float32Array(particleCount * 3);
       const colors = new Float32Array(particleCount * 3);
 
+      // Gold particle colors
       const colorPalette = [
-        new THREE.Color(0x00f0ff),
-        new THREE.Color(0xff00ff),
-        new THREE.Color(0x00ff88)
+        new THREE.Color(0xc9a962),
+        new THREE.Color(0xd4af37),
+        new THREE.Color(0xf5f0e6),
+        new THREE.Color(0xb8956c)
       ];
 
       for (let i = 0; i < particleCount; i++) {
         const i3 = i * 3;
-        positions[i3] = (Math.random() - 0.5) * 30;
-        positions[i3 + 1] = (Math.random() - 0.5) * 30;
-        positions[i3 + 2] = (Math.random() - 0.5) * 30;
+        positions[i3] = (Math.random() - 0.5) * 25;
+        positions[i3 + 1] = (Math.random() - 0.5) * 25;
+        positions[i3 + 2] = (Math.random() - 0.5) * 25;
 
         const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
         colors[i3] = color.r;
@@ -162,10 +203,10 @@
       geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
       const material = new THREE.PointsMaterial({
-        size: 0.05,
+        size: 0.04,
         vertexColors: true,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.6
       });
 
       this.particles = new THREE.Points(geometry, material);
@@ -206,29 +247,43 @@
 
       const time = Date.now() * 0.001;
 
-      // Rotate main model based on scroll and mouse
-      this.model.rotation.x = this.scrollProgress * Math.PI * 2 + this.mouse.y * 0.3;
-      this.model.rotation.y = time * 0.2 + this.mouse.x * 0.3;
-      this.model.rotation.z = Math.sin(time * 0.5) * 0.1;
+      // Smooth rotation based on scroll and mouse
+      this.model.rotation.x = this.scrollProgress * Math.PI * 0.5 + this.mouse.y * 0.2;
+      this.model.rotation.y = time * 0.15 + this.mouse.x * 0.2;
 
-      // Floating effect
-      this.model.position.y = Math.sin(time) * 0.2;
+      // Gentle floating effect
+      this.model.position.y = Math.sin(time * 0.8) * 0.15;
 
-      // Rotate rings
-      this.rings.forEach((ring, index) => {
-        ring.rotation.z = time * (0.2 + index * 0.1) * (index % 2 === 0 ? 1 : -1);
-        ring.rotation.x = Math.PI / 2 + (index * 0.3) + Math.sin(time * 0.5) * 0.1;
-      });
-
-      // Rotate particles
-      if (this.particles) {
-        this.particles.rotation.y = time * 0.02;
-        this.particles.rotation.x = time * 0.01;
+      // Animate individual voxels for breathing effect
+      if (this.voxels) {
+        this.voxels.forEach(voxel => {
+          const data = voxel.userData;
+          // Float each voxel individually
+          const floatY = Math.sin(time * data.floatSpeed + data.floatOffset) * 0.05;
+          voxel.position.y = data.originalPos.y + floatY;
+          // Subtle rotation
+          voxel.rotation.x += data.rotationSpeed;
+          voxel.rotation.y += data.rotationSpeed * 0.7;
+        });
       }
 
-      // Move camera based on scroll
-      this.camera.position.z = 8 + this.scrollProgress * 3;
-      this.camera.position.y = this.scrollProgress * 2;
+      // Rotate rings elegantly
+      this.rings.forEach((ring, index) => {
+        ring.rotation.z = time * (0.15 + index * 0.05) * (index % 2 === 0 ? 1 : -1);
+        ring.rotation.x = Math.PI / 2 + (index * 0.4) + Math.sin(time * 0.3) * 0.05;
+      });
+
+      // Rotate particles gently
+      if (this.particles) {
+        this.particles.rotation.y = time * 0.015;
+        this.particles.rotation.x = time * 0.008;
+      }
+
+
+
+      // Smooth camera movement based on scroll
+      this.camera.position.z = 8 + this.scrollProgress * 2;
+      this.camera.position.y = this.scrollProgress * 1.5;
 
       this.renderer.render(this.scene, this.camera);
     }
@@ -562,7 +617,7 @@
         position: fixed;
         width: 300px;
         height: 300px;
-        background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(201, 169, 98, 0.08) 0%, transparent 70%);
         border-radius: 50%;
         pointer-events: none;
         transform: translate(-50%, -50%);

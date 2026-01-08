@@ -37,12 +37,10 @@
     <meta property="twitter:title" content="Prateek Kumar | Game Developer">
     <meta property="twitter:description" content="Building immersive digital worlds that push boundaries.">
 
-    <!-- Fonts -->
+    <!-- Fonts - Inter (Apple-like) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
@@ -185,7 +183,7 @@
                                 <span class="about__stat-label">Years Experience</span>
                             </div>
                             <div class="about__stat">
-                                <span class="about__stat-number" data-count="5" data-suffix="">0</span>
+                                <span class="about__stat-number" data-count="10" data-suffix="+">0+</span>
                                 <span class="about__stat-label">Technologies</span>
                             </div>
                         </div>
@@ -268,6 +266,7 @@
                         <div class="skill-card__tags">
                             <span class="skill-card__tag">iOS</span>
                             <span class="skill-card__tag">SwiftUI</span>
+                            <span class="skill-card__tag">Android</span>
                             <span class="skill-card__tag">Mobile</span>
                         </div>
                     </article>
@@ -283,8 +282,13 @@
                         </p>
                         <div class="skill-card__tags">
                             <span class="skill-card__tag">Python</span>
+                            <span class="skill-card__tag">Agentic AI</span>
+                            <span class="skill-card__tag">RAG</span>
+                            <span class="skill-card__tag">LangChain</span>
+                            <span class="skill-card__tag">RAAS</span>
                             <span class="skill-card__tag">AI</span>
                             <span class="skill-card__tag">ML</span>
+                            <span class="skill-card__tag">Automation</span>
                         </div>
                     </article>
 
@@ -299,6 +303,7 @@
                         </p>
                         <div class="skill-card__tags">
                             <span class="skill-card__tag">Figma</span>
+                            <span class="skill-card__tag">Canva</span>
                             <span class="skill-card__tag">UI</span>
                             <span class="skill-card__tag">UX</span>
                         </div>
@@ -475,7 +480,8 @@
         </section>
 
         <!-- EXPERIENCE SECTION -->
-        <section class="section" id="experience" aria-labelledby="experience-title">
+        <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+            <div class="experience__ambient-glow"></div>
             <div class="section__container">
                 <header class="section__header reveal">
                     <span class="section__label">My Journey</span>
@@ -487,43 +493,196 @@
                     </p>
                 </header>
 
-                <div class="timeline">
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__content">
-                            <span class="timeline__year">2023</span>
-                            <h3 class="timeline__title">Research Intern</h3>
-                            <p class="timeline__company">DRDO - Defence Research and Development Organisation (INMAS)
-                            </p>
-                            <p class="timeline__description">
-                                Contributed to cutting-edge defense technology research and development projects.
-                            </p>
+                <div class="experience__grid">
+                    <!-- Unity Developer at Phygitech -->
+                    <article class="experience-card experience-card--featured reveal">
+                        <div class="experience-card__glow"></div>
+                        <div class="experience-card__header">
+                            <div class="experience-card__company-info">
+                                <div class="experience-card__logo">
+                                    <i class="bx bx-glasses" aria-hidden="true"></i>
+                                </div>
+                                <div class="experience-card__meta">
+                                    <h3 class="experience-card__title">Unity Developer</h3>
+                                    <p class="experience-card__company">Phygitech Learning Solutions</p>
+                                </div>
+                            </div>
+                            <div class="experience-card__badge">
+                                <span class="experience-card__status">
+                                    <span class="experience-card__status-dot"></span>
+                                    Current Role
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__content">
-                            <span class="timeline__year">2022</span>
-                            <h3 class="timeline__title">ERP Intern</h3>
-                            <p class="timeline__company">Rishikirti Technologies</p>
-                            <p class="timeline__description">
+                        <div class="experience-card__duration">
+                            <i class="bx bx-calendar" aria-hidden="true"></i>
+                            <span>Mar 2025 - Present</span>
+                            <span class="experience-card__separator">•</span>
+                            <i class="bx bx-map" aria-hidden="true"></i>
+                            <span>Gurugram, India</span>
+                        </div>
+
+                        <ul class="experience-card__achievements">
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">🎮</span>
+                                <span>Developed and deployed <strong>40+ curriculum-aligned VR modules</strong> in
+                                    Unity, transforming textbook topics into immersive learning experiences for Grades
+                                    1–12.</span>
+                            </li>
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">🍎</span>
+                                <span>Refactored Windows-specific DPVR SDK workflows to support <strong>Unity Editor
+                                        tooling on macOS</strong>, enabling full-featured cross-platform
+                                    development.</span>
+                            </li>
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">🔧</span>
+                                <span>Built a <strong>production-ready multilingual narration system</strong> with
+                                    automated SO population, dictionary-cached lookups, and comprehensive editor
+                                    tooling.</span>
+                            </li>
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">📈</span>
+                                <span>Improved <strong>user retention rate by 60%</strong> through strategic game design
+                                    and engagement enhancements.</span>
+                            </li>
+                        </ul>
+
+                        <div class="experience-card__skills">
+                            <span class="skill-tag skill-tag--primary">Unity 3D</span>
+                            <span class="skill-tag skill-tag--primary">VR Development</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">DPVR SDK</span>
+                            <span class="skill-tag">EditorScripting</span>
+                        </div>
+                    </article>
+
+                    <!-- Software Developer at Wrexa -->
+                    <article class="experience-card reveal">
+                        <div class="experience-card__glow"></div>
+                        <div class="experience-card__header">
+                            <div class="experience-card__company-info">
+                                <div class="experience-card__logo">
+                                    <i class="bx bx-joystick" aria-hidden="true"></i>
+                                </div>
+                                <div class="experience-card__meta">
+                                    <h3 class="experience-card__title">Software Developer || Game Development</h3>
+                                    <p class="experience-card__company">Wrexa Technologies</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="experience-card__duration">
+                            <i class="bx bx-calendar" aria-hidden="true"></i>
+                            <span>May 2024 - Mar 2025 · 11 mos</span>
+                            <span class="experience-card__separator">•</span>
+                            <i class="bx bx-globe" aria-hidden="true"></i>
+                            <span>United States · Remote</span>
+                        </div>
+
+                        <ul class="experience-card__achievements">
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">🚀</span>
+                                <span>Designed and developed interactive projects using <strong>Unity, PlayCanvas, and
+                                        Lens Studio</strong>, implementing scalable code in C#, C++ and
+                                    JavaScript.</span>
+                            </li>
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">👥</span>
+                                <span>Led a team of developers and 3D artists to deliver <strong>11 projects</strong>
+                                    within tight deadlines, enhancing productivity through effective project
+                                    management.</span>
+                            </li>
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">📊</span>
+                                <span>Increased <strong>user engagement by 30%</strong> through innovative gameplay
+                                    mechanics implementation.</span>
+                            </li>
+                            <li class="experience-card__achievement">
+                                <span class="achievement__icon">🎯</span>
+                                <span>Improved <strong>click-through rate (CTR) by 25%</strong> through strategic game
+                                    design and engagement enhancements.</span>
+                            </li>
+                        </ul>
+
+                        <div class="experience-card__skills">
+                            <span class="skill-tag skill-tag--primary">Unity</span>
+                            <span class="skill-tag skill-tag--primary">PlayCanvas</span>
+                            <span class="skill-tag">Lens Studio</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Metaverse</span>
+                        </div>
+                    </article>
+
+                    <!-- Education & Internships Row -->
+                    <div class="experience__secondary-grid">
+                        <!-- Research Intern at DRDO -->
+                        <article class="experience-card experience-card--compact reveal">
+                            <div class="experience-card__header">
+                                <div class="experience-card__company-info">
+                                    <div class="experience-card__logo experience-card__logo--small">
+                                        <i class="bx bx-atom" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="experience-card__meta">
+                                        <h3 class="experience-card__title">Research Intern</h3>
+                                        <p class="experience-card__company">DRDO - INMAS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-card__duration experience-card__duration--compact">
+                                <span>2023 · New Delhi</span>
+                            </div>
+                            <p class="experience-card__summary">
+                                Contributed to cutting-edge defense technology research and development projects at
+                                prestigious government facility.
+                            </p>
+                        </article>
+
+                        <!-- ERP Intern -->
+                        <article class="experience-card experience-card--compact reveal">
+                            <div class="experience-card__header">
+                                <div class="experience-card__company-info">
+                                    <div class="experience-card__logo experience-card__logo--small">
+                                        <i class="bx bx-data" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="experience-card__meta">
+                                        <h3 class="experience-card__title">ERP Intern</h3>
+                                        <p class="experience-card__company">Rishikirti Technologies</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-card__duration experience-card__duration--compact">
+                                <span>2022 · Noida</span>
+                            </div>
+                            <p class="experience-card__summary">
                                 Gained experience in JD Edwards ERP software implementation and enterprise solutions.
                             </p>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__content">
-                            <span class="timeline__year">2020 - 2024</span>
-                            <h3 class="timeline__title">B.Tech Computer Science</h3>
-                            <p class="timeline__company">CRSSIET Jhajjar</p>
-                            <p class="timeline__description">
+                        <!-- Education -->
+                        <article class="experience-card experience-card--compact experience-card--education reveal">
+                            <div class="experience-card__header">
+                                <div class="experience-card__company-info">
+                                    <div
+                                        class="experience-card__logo experience-card__logo--small experience-card__logo--education">
+                                        <i class="bx bxs-graduation" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="experience-card__meta">
+                                        <h3 class="experience-card__title">B.Tech Computer Science</h3>
+                                        <p class="experience-card__company">CRSSIET Jhajjar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-card__duration experience-card__duration--compact">
+                                <span>2020 - 2024 · Jhajjar</span>
+                            </div>
+                            <p class="experience-card__summary">
                                 Bachelor of Technology in Computer Science & Engineering with focus on game development
                                 and software engineering.
                             </p>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </div>
