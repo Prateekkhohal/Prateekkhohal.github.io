@@ -1,0 +1,185 @@
+/* ============================================
+   Contact Section Styles
+   ============================================ */
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+
+.contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.contact__text {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.contact__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact__link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    /* Liquid Glass Background */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.06) 0%,
+            rgba(255, 255, 255, 0.02) 50%,
+            rgba(201, 169, 98, 0.04) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Liquid shine effect */
+.contact__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(201, 169, 98, 0.15),
+            transparent);
+    transition: left 0.5s ease;
+}
+
+.contact__link:hover::before {
+    left: 100%;
+}
+
+.contact__link:hover {
+    border-color: rgba(201, 169, 98, 0.3);
+    transform: translateX(10px);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.15),
+        0 0 40px rgba(201, 169, 98, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.contact__link-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-accent-primary);
+    /* Liquid Glass Icon Background */
+    background: linear-gradient(135deg,
+            rgba(201, 169, 98, 0.15) 0%,
+            rgba(201, 169, 98, 0.08) 100%);
+    border-radius: var(--radius-md);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.contact__link-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__link-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact__link-value {
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.contact__social {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.contact__social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--color-text-secondary);
+    /* Liquid Glass Background */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.06) 0%,
+            rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all var(--transition-normal);
+}
+
+.contact__social-link:hover {
+    color: var(--color-accent-primary);
+    border-color: rgba(201, 169, 98, 0.3);
+    transform: translateY(-5px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(201, 169, 98, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Liquid Glass Contact Form */
+.contact__form {
+    padding: var(--spacing-2xl);
+    /* Liquid Glass Background */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.06) 0%,
+            rgba(255, 255, 255, 0.02) 50%,
+            rgba(201, 169, 98, 0.04) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Liquid glass form shine */
+.contact__form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.15) 20%,
+            rgba(201, 169, 98, 0.3) 50%,
+            rgba(255, 255, 255, 0.15) 80%,
+            transparent 100%);
+}

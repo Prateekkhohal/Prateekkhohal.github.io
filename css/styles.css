@@ -1,0 +1,35 @@
+/* ============================================
+   LUXURY PORTFOLIO - CINEMATIC STUDIO DESIGN
+   Author: Prateek Kumar
+   Version: 5.0.0 - Modular Edition
+   
+   This is the main entry point that imports all CSS modules.
+   ============================================ */
+
+/* Base Styles */
+@import url('./base/variables.css');
+@import url('./base/reset.css');
+
+/* Components */
+@import url('./components/glass-panel.css');
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/forms.css');
+
+/* Layout */
+@import url('./layout/loader.css');
+@import url('./layout/navigation.css');
+@import url('./layout/hero.css');
+@import url('./layout/sections.css');
+@import url('./layout/footer.css');
+
+/* Sections */
+@import url('./sections/about.css');
+@import url('./sections/skills.css');
+@import url('./sections/portfolio.css');
+@import url('./sections/experience.css');
+@import url('./sections/contact.css');
+
+/* Utilities */
+@import url('./utilities/animations.css');
+@import url('./utilities/responsive.css');

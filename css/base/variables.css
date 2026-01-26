@@ -1,0 +1,131 @@
+/* ============================================
+   CSS Custom Properties (Design Tokens)
+   Author: Prateek Kumar
+   ============================================ */
+
+:root {
+    /* Cinematic Dark Theme */
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #080808;
+    --color-bg-tertiary: #0f0f0f;
+    --color-bg-card: #0a0a0a;
+    --color-bg-elevated: #121212;
+
+    /* Luxury Accent Colors - Warm Gold/Champagne */
+    --color-accent-primary: #c9a962;
+    --color-accent-secondary: #b8956c;
+    --color-accent-tertiary: #d4af37;
+    --color-accent-cream: #f5f0e6;
+    --color-accent-warning: #ffaa00;
+
+    /* Gradients - Luxury */
+    --gradient-gold: linear-gradient(135deg, #c9a962 0%, #d4af37 100%);
+    --gradient-neon: linear-gradient(135deg, #c9a962 0%, #d4af37 100%);
+    --gradient-subtle: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    --gradient-card: linear-gradient(135deg, rgba(201, 169, 98, 0.03) 0%, transparent 100%);
+    --gradient-glow: radial-gradient(ellipse at center, rgba(201, 169, 98, 0.1) 0%, transparent 70%);
+
+    /* Text Colors - High Contrast */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #b8b8bc;
+    --color-text-tertiary: #a0a0a5;
+    --color-text-muted: #808085;
+
+    /* Separator & Border Colors */
+    --color-separator: rgba(255, 255, 255, 0.08);
+    --color-separator-opaque: #38383a;
+    --color-border: rgba(255, 255, 255, 0.12);
+
+    /* Elevation Shadows - Apple Style */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.5);
+    --glow-cyan: 0 0 20px rgba(201, 169, 98, 0.5);
+
+    /* Typography - Clean & Refined */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    --font-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+    --font-mono: 'SF Mono', 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+    /* Font Sizes - Refined Scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3rem;
+    --font-size-display: clamp(3rem, 8vw, 5rem);
+    --font-size-hero: clamp(3.5rem, 10vw, 6rem);
+
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Spacing - Generous */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    --spacing-5xl: 8rem;
+
+    /* Border Radius - Softer */
+    --radius-xs: 6px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+
+    /* Transitions - Smooth & Premium */
+    --transition-fast: 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-normal: 350ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-slow: 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Z-Index */
+    --z-background: -1;
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-tooltip: 500;
+    --z-canvas: 0;
+    --z-glass: 10;
+    --z-text-layer: 15;
+
+    /* Liquid Glass Design Tokens */
+    --glass-blur: 40px;
+    --glass-saturation: 180%;
+    --glass-bg-light: rgba(255, 255, 255, 0.05);
+    --glass-bg-medium: rgba(255, 255, 255, 0.08);
+    --glass-bg-heavy: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-border-subtle: rgba(255, 255, 255, 0.08);
+    --glass-tint-warm: rgba(201, 169, 98, 0.05);
+    --glass-tint-cool: rgba(200, 220, 255, 0.03);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --glass-inner-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    --glass-inner-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+    /* Text Over Glass - Vibrancy Effect */
+    --text-shadow-glass:
+        0 1px 2px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(201, 169, 98, 0.1);
+    --text-shadow-glass-subtle:
+        0 1px 1px rgba(0, 0, 0, 0.3);
+}
