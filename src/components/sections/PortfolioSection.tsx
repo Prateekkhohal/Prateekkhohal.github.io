@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-32 px-6 relative bg-white/40 backdrop-blur-3xl">
+    <section id="portfolio" className="py-32 px-6 relative">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,15 +16,15 @@ export function PortfolioSection() {
           className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#18181B] mb-4">
-              Selected <span className="text-[#2563EB]">Works</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+              Selected <span className="text-blue-500">Works</span>
             </h2>
-            <p className="text-lg text-[#3F3F46] max-w-xl">
+            <p className="text-lg text-gray-400 max-w-xl">
               A collection of my recent projects showcasing game development, VR experiences, and creative coding.
             </p>
           </div>
 
-          <button className="px-6 py-3 rounded-full border-2 border-[#18181B] text-[#18181B] font-medium hover:bg-[#18181B] hover:text-white transition-colors duration-300 w-fit">
+          <button className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition-colors duration-300 w-fit">
             View All Projects
           </button>
         </motion.div>
@@ -39,18 +39,14 @@ export function PortfolioSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-6 liquid-glass p-2">
-                <div className="absolute inset-0 bg-[#18181B]/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                <div className="w-full h-full rounded-2xl overflow-hidden relative bg-gray-200">
-                   {/* Fallback pattern since images might not exist */}
-                   <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 opacity-50" />
-                   <div className="absolute inset-0 flex items-center justify-center text-4xl opacity-20">
-                     {project.category === "VR Development" ? "🥽" : project.category === "Web Development" ? "🌐" : "🎮"}
-                   </div>
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-6 liquid-glass p-2 border border-white/10 group-hover:border-blue-500/50 transition-colors duration-500">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <div className="w-full h-full rounded-2xl overflow-hidden relative bg-zinc-900">
+                   <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform" />
 
                    {/* Hover Overlay */}
-                   <div className="absolute inset-0 bg-[#18181B]/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-20">
-                     <span className="w-16 h-16 rounded-full bg-white text-[#18181B] flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500 ease-out">
+                   <div className="absolute inset-0 bg-blue-900/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-20">
+                     <span className="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-500 ease-out">
                        <ArrowUpRight className="w-6 h-6" />
                      </span>
                    </div>
@@ -59,14 +55,14 @@ export function PortfolioSection() {
 
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-xs font-bold tracking-wider uppercase text-[#2563EB] bg-blue-50 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold tracking-wider uppercase text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-[#18181B] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-[#3F3F46] line-clamp-2">
+                <p className="text-gray-400 line-clamp-2">
                   {project.description}
                 </p>
               </div>

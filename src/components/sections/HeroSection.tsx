@@ -22,41 +22,41 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass w-fit border-white/40"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass w-fit border-white/10"
           >
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-            <span className="text-sm font-medium tracking-wide">Available for new opportunities</span>
+            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+            <span className="text-sm font-medium tracking-wide text-gray-300">Available for new opportunities</span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#18181B] leading-[1.1]">
-            <span className="block text-[#3F3F46] text-3xl md:text-4xl mb-4 font-normal tracking-normal">Hi, I'm {portfolioData.personal.name}</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18181B] via-[#2563EB] to-[#18181B] animate-gradient-x inline-block pb-2">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+            <span className="block text-gray-400 text-3xl md:text-4xl mb-4 font-normal tracking-normal">Hi, I'm {portfolioData.personal.name}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 animate-gradient-x inline-block pb-2">
               Creative Technologist
             </span>
             <br />
             & Game Developer
           </h1>
 
-          <p className="text-lg md:text-xl text-[#3F3F46] max-w-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
             {portfolioData.personal.bio}
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <a
               href="#contact"
-              className="bg-[#18181B] text-white px-8 py-4 rounded-full font-medium hover:bg-[#2563EB] transition-colors duration-300 flex items-center gap-2 cursor-pointer shadow-lg shadow-black/5"
+              className="bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2 cursor-pointer shadow-lg shadow-blue-500/20"
             >
               Get in Touch <Mail className="w-4 h-4" />
             </a>
             <a
               href="#portfolio"
-              className="liquid-glass text-[#18181B] px-8 py-4 rounded-full font-medium hover:bg-white/60 transition-colors duration-300 cursor-pointer"
+              className="liquid-glass text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-colors duration-300 cursor-pointer"
             >
               View Work
             </a>
           </div>
 
-          <div className="flex items-center gap-6 pt-8 text-[#3F3F46]">
+          <div className="flex items-center gap-6 pt-8 text-gray-400">
             {[
               { icon: FaLinkedin, href: portfolioData.personal.socials.linkedin },
               { icon: FaGithub, href: portfolioData.personal.socials.github },
@@ -67,7 +67,7 @@ export function HeroSection() {
                 href={social.href}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#2563EB] transition-colors duration-200 cursor-pointer p-2 -m-2"
+                className="hover:text-blue-400 transition-colors duration-200 cursor-pointer p-2 -m-2"
               >
                 <social.icon className="w-6 h-6" />
               </a>
@@ -89,7 +89,7 @@ export function HeroSection() {
               rotate: [0, 90, 0]
             }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute w-[80%] h-[80%] bg-gradient-to-br from-[#2563EB]/20 to-purple-500/20 blur-2xl"
+            className="absolute w-[80%] h-[80%] bg-gradient-to-br from-blue-600/30 to-purple-600/30 blur-2xl"
           />
           <motion.div
             animate={{
@@ -97,11 +97,11 @@ export function HeroSection() {
               rotate: [0, -90, 0]
             }}
             transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute w-[70%] h-[70%] bg-gradient-to-tr from-[#18181B]/10 to-transparent liquid-glass border border-white/20"
+            className="absolute w-[70%] h-[70%] bg-gradient-to-tr from-blue-400/20 to-transparent liquid-glass border border-white/10"
           />
           <div className="absolute inset-0 flex items-center justify-center">
-             <div className="w-32 h-32 rounded-full liquid-glass flex items-center justify-center shadow-2xl backdrop-blur-xl">
-                <span className="text-4xl">🎮</span>
+             <div className="w-32 h-32 rounded-full liquid-glass flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.3)] backdrop-blur-xl border border-white/20">
+                <span className="text-5xl">🎮</span>
              </div>
           </div>
         </motion.div>

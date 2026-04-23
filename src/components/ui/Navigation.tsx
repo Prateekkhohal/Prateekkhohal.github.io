@@ -35,12 +35,12 @@ export function Navigation() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className={clsx(
-          "flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500",
-          isScrolled ? "liquid-glass shadow-lg border-white/20" : "bg-transparent"
+          "flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 border",
+          isScrolled ? "liquid-glass shadow-[0_0_20px_rgba(0,0,0,0.5)] border-white/10" : "bg-transparent border-transparent"
         )}>
 
-          <a href="#" className="font-bold text-xl tracking-tight text-[#18181B]">
-            PK<span className="text-[#2563EB]">.</span>
+          <a href="#" className="font-bold text-xl tracking-tight text-white">
+            PK<span className="text-blue-500">.</span>
           </a>
 
           {/* Desktop Nav */}
@@ -49,15 +49,15 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-[#3F3F46] hover:text-[#2563EB] transition-colors relative group"
+                className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
             <a
               href="#contact"
-              className="px-5 py-2 rounded-full bg-[#18181B] text-white text-sm font-medium hover:bg-[#2563EB] transition-colors"
+              className="px-5 py-2 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors"
             >
               Hire Me
             </a>
@@ -65,7 +65,7 @@ export function Navigation() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-[#18181B]"
+            className="md:hidden p-2 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
@@ -80,14 +80,14 @@ export function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-6 right-6 mt-2 p-6 liquid-glass rounded-3xl md:hidden flex flex-col gap-4 shadow-2xl"
+            className="absolute top-full left-6 right-6 mt-2 p-6 liquid-glass rounded-3xl md:hidden flex flex-col gap-4 shadow-2xl border border-white/10"
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-lg font-medium text-[#18181B] py-2 border-b border-black/5"
+                className="text-lg font-medium text-white py-2 border-b border-white/10"
               >
                 {link.name}
               </a>
@@ -95,7 +95,7 @@ export function Navigation() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 px-6 py-3 rounded-full bg-[#2563EB] text-white text-center font-bold"
+              className="mt-4 px-6 py-3 rounded-full bg-blue-600 text-white text-center font-bold"
             >
               Hire Me
             </a>

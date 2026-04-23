@@ -16,16 +16,16 @@ export const portfolioData = {
     {
       title: "Unity Developer",
       company: "Phygitech Learning Solutions",
-      duration: "Current Role",
-      location: "",
-      summary: "Developing augmented reality (AR) and virtual reality (VR) solutions using Unity 3D."
+      duration: "Mar 2025 - Present",
+      location: "Gurugram, India",
+      summary: "Developed and deployed 40+ curriculum-aligned VR modules in Unity, transforming textbook topics into immersive learning experiences for Grades 1–12. Refactored Windows-specific DPVR SDK workflows to support Unity Editor tooling on macOS, enabling full-featured cross-platform development."
     },
     {
       title: "Software Developer || Game Development",
       company: "Wrexa Technologies",
       duration: "May 2024 - Mar 2025",
-      location: "",
-      summary: "Developed games and interactive software applications."
+      location: "United States · Remote",
+      summary: "Designed and developed interactive projects using Unity, PlayCanvas, and Lens Studio, implementing scalable code in C#, C++ and JavaScript."
     },
     {
       title: "Research Intern",
