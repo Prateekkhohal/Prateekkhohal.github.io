@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Monochrome + a single blue accent, per design-system/portfolio/MASTER.md */
+    --void: #050506;
+    --base: #08080a;
+    --surface: #0d0d10;
+    --raised: #141418;
+    --line: 255 255 255 / 0.08;
+    --line-strong: 255 255 255 / 0.16;
+
+    --text: #fafafa;
+    --muted: #a1a1aa;
+    --dim: #71717a;
+    /* Lighter than --dim so placeholder text clears 4.5:1 on the input fill. */
+    --placeholder: #8b8b94;
+
+    --accent: #2563eb;
+    --accent-bright: #3b82f6;
+
+    /* Depth scale. Shadows get softer and wider as elements rise off the page. */
+    --depth-1: 0 1px 2px rgb(0 0 0 / 0.4);
+    --depth-2: 0 8px 24px -8px rgb(0 0 0 / 0.7);
+    --depth-3: 0 24px 60px -20px rgb(0 0 0 / 0.85);
+    --depth-4: 0 40px 100px -30px rgb(0 0 0 / 0.9);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    background-color: var(--base);
+    color: var(--text);
+    /* Nothing may push the page sideways on a phone. */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-archivo), system-ui, sans-serif;
+  }
+
+  /* Visible keyboard focus everywhere, never removed. */
+  :focus-visible {
+    outline: 2px solid var(--accent-bright);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--void);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #26262c;
+    border-radius: 99px;
+    border: 3px solid var(--void);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a44;
+  }
+}
+
+@layer components {
+  /* ---- 3D primitives -------------------------------------------------- */
+  /* Tailwind 3.4 has no perspective utilities, so they live here. */
+  .scene {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+  }
+  .scene-near {
+    perspective: 700px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Content that floats above a tilting card surface. */
+  .layer-1 {
+    transform: translateZ(20px);
+  }
+  .layer-2 {
+    transform: translateZ(40px);
+  }
+  .layer-3 {
+    transform: translateZ(70px);
+  }
+
+  /* ---- Surfaces -------------------------------------------------------- */
+  .panel {
+    position: relative;
+    background: linear-gradient(158deg, rgb(255 255 255 / 0.045), rgb(255 255 255 / 0.012) 42%, transparent);
+    border: 1px solid rgb(var(--line));
+    box-shadow: var(--depth-2);
+  }
+
+  /* Hairline top edge, the way a lit surface catches light. */
+  .panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.22), transparent);
+    pointer-events: none;
+  }
+
+  .rule {
+    height: 1px;
+    background: linear-gradient(90deg, rgb(var(--line-strong)), transparent);
+  }
+
+  /* Engineering grid, used as a floor plane behind sections. */
+  .grid-floor {
+    background-image: linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .mono {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Dissolves the foot of an element into the page. Used on the portrait so
+     the cutout has no hard bottom edge, and on the hero lattice so it does
+     not run through the figures underneath it. */
+  .fade-bottom {
+    -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 98%);
+    mask-image: linear-gradient(to bottom, #000 68%, transparent 98%);
+  }
+
+  .fade-bottom-soft {
+    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 88%);
+    mask-image: linear-gradient(to bottom, #000 45%, transparent 88%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Body copy stays inside a comfortable measure. */
+  .measure {
+    max-width: 68ch;
+  }
+}
+
+/* Grain. Static, generated, no asset request. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/*
+ * Reduced motion: every animation has a still fallback. Transforms are reset
+ * so nothing is left mid-tilt, and the canvas renderer checks the same query
+ * in JS and paints exactly one frame.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .grain::after {
+    display: none;
+  }
+}
