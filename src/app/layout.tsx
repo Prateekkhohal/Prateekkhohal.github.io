@@ -43,11 +43,20 @@ export const metadata: Metadata = {
     description,
     url: "https://prateekkhohal.github.io",
     siteName: `${personal.name} Portfolio`,
+    images: [
+      {
+        url: "/Assets/IMAGES/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${personal.name}, ${personal.title}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${personal.name} | ${personal.title}`,
     description,
+    images: ["/Assets/IMAGES/og.png"],
   },
 };
 
